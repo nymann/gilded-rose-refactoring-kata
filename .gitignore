@@ -4,3 +4,7 @@
 tags
 .venv/
 __pycache__/
+.eggs/
+coverage.xml
+htmlcov/
+src/gilded_rose.egg-info
