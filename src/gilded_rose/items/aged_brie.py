@@ -1,11 +1,9 @@
-from gilded_rose.items.increating_quality_item import IncreasingQualityItem
+from gilded_rose.items.item import Item
 
 
-class AgedBrie(IncreasingQualityItem):
-    def update_quality(self):
-        super().update_quality()
-
+class AgedBrie(Item):
+    def _change_quality(self):
         if self.sell_in < 0:
+            self.quality += 2
+        else:
             self.quality += 1
-        if self.quality > 50:
-            self.quality = 50

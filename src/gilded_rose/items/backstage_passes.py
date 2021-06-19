@@ -1,14 +1,19 @@
-from gilded_rose.items.increating_quality_item import IncreasingQualityItem
+from gilded_rose.items.item import Item
 
 
-class BackstagePasses(IncreasingQualityItem):
-    def update_quality(self):
-        super().update_quality()
-
-        if self.sell_in < 10:
-            self.quality += 1
-        if self.sell_in < 5:
-            self.quality += 1
-        if self.sell_in < 0:
+class BackstagePasses(Item):
+    def _change_quality(self):
+        if self._is_expired():
             self.quality = 0
-        self._ensure_quality_within_bounds()
+        else:
+            self.quality += self._quality_add_amount()
+
+    def _is_expired(self) -> bool:
+        return self.sell_in < 0
+
+    def _quality_add_amount(self) -> int:
+        if self.sell_in < 5:
+            return 3
+        if self.sell_in < 10:
+            return 2
+        return 1
