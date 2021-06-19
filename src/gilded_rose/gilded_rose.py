@@ -17,32 +17,6 @@ class GildedRose(object):
         for item in self.items:
             item.update_quality()
 
-def update_aged_brie_quality(item: Item):
-    item.quality += 1
-
-    if item.sell_in <= 0:
-        item.quality += 1
-    if item.quality > 50:
-        item.quality = 50
-    item.sell_in -= 1
-
-def update_backstage_passes_concert_quality(item: Item):
-    item.quality += 1
-
-    if item.sell_in <= 10:
-        item.quality += 1
-    if item.sell_in <= 5:
-        item.quality += 1
-
-    if item.quality > 50:
-        item.quality = 50
-
-    if item.sell_in <= 0:
-        item.quality = 0
-
-    item.sell_in -= 1
-
-
 class Item:
     def __init__(self, name, sell_in, quality):
         self.name = name
@@ -84,4 +58,3 @@ class BackstagePasses(Item):
             self.quality = 0
 
         self.sell_in -= 1
-
