@@ -38,14 +38,14 @@ class GildedRose(object):
                     if item.quality < 50:
                         item.quality = item.quality + 1
 
-def update_aged_brie_quality(item: Item) -> Item:
+def update_aged_brie_quality(item: Item):
     item.quality += 1
+
     if item.sell_in <= 0:
         item.quality += 1
     if item.quality > 50:
         item.quality = 50
-    return item
-
+    item.sell_in -= 1
 
 
 class Item:
