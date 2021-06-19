@@ -1,9 +1,9 @@
 from gilded_rose.gilded_rose import GildedRose, Item
 
 def test_aged_brie():
-    aged_brie = Item(name="Aged Brie", sell_in=20, quality=5)
-    gilded_rose = GildedRose(items=[aged_brie])
+    gilded_rose = GildedRose(items=[Item(name="Aged Brie", sell_in=20, quality=5)])
     for _ in range(100):
+        aged_brie = gilded_rose.items[0]
         expected_quality = aged_brie.quality + 1
         if aged_brie.sell_in <= 0:
             expected_quality += 1
