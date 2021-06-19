@@ -1,9 +1,9 @@
 from gilded_rose.gilded_rose import GildedRose, Item
 
-def test_sulfuras_quality():
-    starting_quality = 80
-    sulfuras = Item(name="Sulfuras, Hand of Ragnaros", sell_in=30, quality=starting_quality)
+def test_sulfuras():
+    sulfuras = Item(name="Sulfuras, Hand of Ragnaros", sell_in=10, quality=80)
     gilded_rose = GildedRose(items=[sulfuras])
-    assert sulfuras.quality == starting_quality
-    gilded_rose.update_quality()
-    assert sulfuras.quality == starting_quality
+    for _ in range(30):
+        gilded_rose.update_quality()
+        assert sulfuras.quality == 80
+        assert sulfuras.sell_in == 10
