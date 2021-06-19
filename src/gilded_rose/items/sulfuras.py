@@ -1,4 +1,4 @@
-from gilded_rose.gilded_rose import Item
+from gilded_rose.items.item import Item
 
 class Sulfuras(Item):
     def update_quality(self):

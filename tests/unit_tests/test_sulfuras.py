@@ -1,4 +1,5 @@
-from gilded_rose.gilded_rose import GildedRose, Item
+from gilded_rose.gilded_rose import GildedRose
+from gilded_rose.items.item import Item
 
 def test_sulfuras():
     

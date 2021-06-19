@@ -1,5 +1,7 @@
-from __future__ import annotations
-from abc import abstractmethod
+from gilded_rose.items.aged_brie import AgedBrie
+from gilded_rose.items.backstage_passes import BackstagePasses
+from gilded_rose.items.item import Item
+from gilded_rose.items.sulfuras import Sulfuras
 
 class GildedRose(object):
 
@@ -16,44 +18,3 @@ class GildedRose(object):
     def update_quality(self):
         for item in self.items:
             item.update_quality()
-
-class Item:
-    def __init__(self, name, sell_in, quality):
-        self.name = name
-        self.sell_in = sell_in
-        self.quality = quality
-
-    @abstractmethod
-    def update_quality(self):
-        raise NotImplementedError
-
-
-class Sulfuras(Item):
-    def update_quality(self):
-        pass
-
-class AgedBrie(Item):
-    def update_quality(self):
-        self.quality += 1
-        self.sell_in -= 1
-
-        if self.sell_in < 0:
-            self.quality += 1
-        if self.quality > 50:
-            self.quality = 50
-
-class BackstagePasses(Item):
-    def update_quality(self):
-        self.quality += 1
-        self.sell_in -= 1
-
-        if self.sell_in < 10:
-            self.quality += 1
-        if self.sell_in < 5:
-            self.quality += 1
-
-        if self.quality > 50:
-            self.quality = 50
-
-        if self.sell_in < 0:
-            self.quality = 0
