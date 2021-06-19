@@ -3,7 +3,8 @@ from gilded_rose.items.backstage_passes import BackstagePasses
 from gilded_rose.items.item import Item
 from gilded_rose.items.sulfuras import Sulfuras
 
-class GildedRose(object):
+
+class GildedRose:
 
     def __init__(self, items):
         self.items: list[Item] = []

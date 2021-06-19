@@ -1,6 +1,7 @@
 from gilded_rose.gilded_rose import GildedRose
 from gilded_rose.items.item import Item
 
+
 def test_backstage_passes_concert():
     gilded_rose = GildedRose(items=[Item(name="Backstage passes to a TAFKAL80ETC concert", sell_in=30, quality=5)])
     for _ in range(100):

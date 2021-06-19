@@ -1,6 +1,7 @@
 from gilded_rose.gilded_rose import GildedRose
 from gilded_rose.items.item import Item
 
+
 def test_sulfuras():
     
     gilded_rose = GildedRose(items=[Item(name="Sulfuras, Hand of Ragnaros", sell_in=10, quality=80)])
