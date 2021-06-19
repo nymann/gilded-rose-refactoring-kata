@@ -9,5 +9,7 @@ def test_aged_brie():
             expected_quality += 1
         if expected_quality > 50:
             expected_quality = 50
+        expected_sell_in = aged_brie.sell_in - 1
         gilded_rose.update_quality()
         assert aged_brie.quality == expected_quality
+        assert aged_brie.sell_in == expected_sell_in
