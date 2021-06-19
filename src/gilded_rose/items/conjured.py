@@ -7,5 +7,4 @@ class ConjuredItem(Item):
         self.sell_in -= 1
         if self.sell_in < 0:
             self.quality -= 2
-        if self.quality > 50:
-            self.quality = 50
+        self._cap_quality()

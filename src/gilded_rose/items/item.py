@@ -10,3 +10,7 @@ class Item:
     @abstractmethod
     def update_quality(self):
         raise NotImplementedError
+
+    def _cap_quality(self):
+        if self.quality > 50:
+            self.quality = 50
