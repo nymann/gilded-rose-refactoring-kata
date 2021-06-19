@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+from __future__ import annotations
 
 class GildedRose(object):
 
@@ -7,6 +7,9 @@ class GildedRose(object):
 
     def update_quality(self):
         for item in self.items:
+            if item.name == "Aged Brie":
+                update_aged_brie_quality(item=item)
+                continue
             if item.name != "Aged Brie" and item.name != "Backstage passes to a TAFKAL80ETC concert":
                 if item.quality > 0:
                     if item.name != "Sulfuras, Hand of Ragnaros":
@@ -34,6 +37,15 @@ class GildedRose(object):
                 else:
                     if item.quality < 50:
                         item.quality = item.quality + 1
+
+def update_aged_brie_quality(item: Item) -> Item:
+    item.quality += 1
+    if item.sell_in <= 0:
+        item.quality += 1
+    if item.quality > 50:
+        item.quality = 50
+    return item
+
 
 
 class Item:
