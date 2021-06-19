@@ -1,4 +1,5 @@
 from gilded_rose.items.aged_brie import AgedBrie
+from gilded_rose.items.conjured import ConjuredItem
 from gilded_rose.items.sulfuras import Sulfuras
 from gilded_rose.items.backstage_passes import BackstagePasses
 from gilded_rose.items.item import Item
@@ -7,7 +8,8 @@ class ItemFactory:
     item_types = {
         "Aged Brie": AgedBrie,
         "Sulfuras, Hand of Ragnaros": Sulfuras,
-        "Backstage passes to a TAFKAL80ETC concert": BackstagePasses
+        "Backstage passes to a TAFKAL80ETC concert": BackstagePasses,
+        "Conjured": ConjuredItem,
     }
 
     @classmethod
