@@ -11,4 +11,4 @@ class BackstagePasses(IncreasingQualityItem):
             self.quality += 1
         if self.sell_in < 0:
             self.quality = 0
-        self._cap_quality()
+        self._ensure_quality_within_bounds()

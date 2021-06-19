@@ -11,6 +11,8 @@ class Item:
     def update_quality(self):
         raise NotImplementedError
 
-    def _cap_quality(self):
+    def _ensure_quality_within_bounds(self):
         if self.quality > 50:
             self.quality = 50
+        if self.quality < 0:
+            self.quality = 0
