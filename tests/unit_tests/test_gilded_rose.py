@@ -1,4 +1,5 @@
 from gilded_rose.gilded_rose import GildedRose
+from gilded_rose.items.aged_brie import AgedBrie
 from gilded_rose.items.item import Item
 
 items = [Item(name="Aged Brie", sell_in=2, quality=4)]
@@ -18,4 +19,6 @@ def test_update_call():
     gilded_rose = GildedRose(items=items)
     gilded_rose.update_quality()
     aged_brie = gilded_rose.items[0]
+
+    assert isinstance(aged_brie, AgedBrie)
     assert aged_brie.quality == 5

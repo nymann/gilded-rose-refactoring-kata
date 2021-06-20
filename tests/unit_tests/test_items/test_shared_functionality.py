@@ -5,7 +5,7 @@ from gilded_rose.items.conjured import ConjuredItem
 from gilded_rose.items.item import Item
 from gilded_rose.items.aged_brie import AgedBrie
 
-COMMON_VARS = {"name": "SomeName", "sell_in": 30, "quality": 60}
+COMMON_VARS = {"sell_in": 30, "quality": 60}
 
 test_cases = [
     AgedBrie(**COMMON_VARS),

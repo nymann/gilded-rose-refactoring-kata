@@ -1,5 +1,4 @@
 import pytest
-from gilded_rose.item_factory import ItemFactory
 
 from gilded_rose.items.aged_brie import AgedBrie
 from gilded_rose.items.backstage_passes import BackstagePasses
@@ -18,5 +17,5 @@ test_cases = [
 
 @pytest.mark.parametrize("item,expected_item_type", test_cases)
 def test_item_factory(item: Item, expected_item_type):
-    item_type: Item = ItemFactory.create_item(item=item)
+    item_type: Item = Item.create_from_item(item=item)
     assert isinstance(item_type, expected_item_type)
